@@ -94,9 +94,13 @@ body {
 .reviews p.active {
   display: block; /* Only show the review with the "active" class */
 }
-
-
-    .cta-footer {
+a:hover {
+  color: rgb(202, 153, 193);        /* Change text color on hover */
+}
+button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
+.cta-footer {
     text-align: center;
     background: #222;
     color: white;
@@ -116,14 +120,18 @@ body {
   background: #ee28f5;
       color: white;
       border: none;
-      padding: 5px 20px;
+      padding: 15px 30px;
       margin-top: 30px;
       font-size: 15px;
       cursor: pointer;
       border-radius: 5px;
       text-decoration: none;
 }
+.shopbutton:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+}
 .email{color: #ee28f5;}
+
     footer {
       background: #222;
       color: #aaa;
@@ -131,7 +139,13 @@ body {
       text-align: center;
       font-size: 14px;
     }
+    footer a {
+  color: #f42cb1;
+}
 
+footer a:hover {
+  color: rgb(202, 153, 193);
+}
     /* === Gallery Modal Styling === */
 #galleryModal {
   display: none;
