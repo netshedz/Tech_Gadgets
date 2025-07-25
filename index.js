@@ -179,3 +179,6 @@ rotateReviews();
 
 // Set an interval to rotate the reviews every 3 seconds
 setInterval(rotateReviews, 3000); // Adjust the time interval as needed (3000ms = 3 seconds)
+
+
+
