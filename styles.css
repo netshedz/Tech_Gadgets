@@ -94,58 +94,10 @@ body {
 .reviews p.active {
   display: block; /* Only show the review with the "active" class */
 }
-a:hover {
-  color: rgb(202, 153, 193);        /* Change text color on hover */
-}
 button:hover {
   background-color: #2980b9; /* Darker blue on hover */
 }
-.cta-footer {
-    text-align: center;
-    background: #222;
-    color: white;
-    padding: 5px 200px;
-}
 
-.cta-footer h2 {
-    font-size: 30px;
-    margin-bottom: 20px;
-}
-
-.cta-footer p {
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-.shopbutton{
-  background: #ee28f5;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      margin-top: 30px;
-      font-size: 15px;
-      cursor: pointer;
-      border-radius: 5px;
-      text-decoration: none;
-}
-.shopbutton:hover {
-  background-color: #2980b9; /* Darker blue on hover */
-}
-.email{color: #ee28f5;}
-
-    footer {
-      background: #222;
-      color: #aaa;
-      padding: 30px 20px;
-      text-align: center;
-      font-size: 14px;
-    }
-    footer a {
-  color: #f42cb1;
-}
-
-footer a:hover {
-  color: rgb(202, 153, 193);
-}
     /* === Gallery Modal Styling === */
 #galleryModal {
   display: none;
@@ -215,4 +167,59 @@ footer a:hover {
 
 #closeGallery:hover {
   background: #d61ad9;
+}
+/* Unified Footer Styles */
+.main-footer {
+  text-align: center;
+  background: #222;
+  color: white;
+  font-size: 15px;
+  padding: 20px 15px;
+}
+
+.main-footer h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.main-footer p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 10px;
+}
+
+.shopbutton {
+  background: #ee28f5;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  margin-top: 30px;
+  font-size: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.shopbutton:hover {
+  background-color: #2980b9;
+}
+
+.email {
+  color: #ee28f5;
+
+}
+
+.footer-info {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.footer-info a {
+  color: #f42cb1;
+  text-decoration: none;
+}
+
+.footer-info a:hover {
+  color: rgb(202, 153, 193);
 }
