@@ -1,0 +1,204 @@
+body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f7f9fc;
+      color: #333;
+    }
+    header {
+      background: #000;
+      color: #fff;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    header h1 {
+      font-size: 3em;
+      margin-bottom: 15px;
+    }
+    header p {
+      font-size: 1.2em;
+      max-width: 600px;
+      margin: auto;
+    }
+    .Button {
+      background: #ee28f5;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      margin-top: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    section {
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+    .product {
+      background: white;
+      width: 260px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      text-align: center;
+      padding: 20px;
+    }
+    .product img {
+      width: 100%;
+      border-radius: 10px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .product h3 {
+      margin: 15px 0 10px;
+    }
+    /* Add rotation effect on image hover */
+    .products .product img {
+      transition: transform 0.5s ease; /* Smooth transition for the transformation */
+}
+.products .product img:hover {
+  transform: rotate(360deg); /* Adjust the degree of rotation */
+}
+    .benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .benefit {
+      background-color: #0a2188;
+      flex: 1 1 300px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    .reviews, .faq {
+      background: #fff;
+      border-radius: 10px;
+      margin-top: 40px;
+      padding: 30px;
+    }
+    .reviews p {
+  display: none; /* Hide all reviews initially */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+.reviews p.active {
+  display: block; /* Only show the review with the "active" class */
+}
+
+
+    .cta-footer {
+    text-align: center;
+    background: #222;
+    color: white;
+    padding: 5px 200px;
+}
+
+.cta-footer h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.cta-footer p {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.shopbutton{
+  background: #ee28f5;
+      color: white;
+      border: none;
+      padding: 5px 20px;
+      margin-top: 30px;
+      font-size: 15px;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+}
+.email{color: #ee28f5;}
+    footer {
+      background: #222;
+      color: #aaa;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    /* === Gallery Modal Styling === */
+#galleryModal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#galleryModal.active {
+  display: flex;
+}
+
+.gallery-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-content h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.8em;
+  color: #333;
+}
+
+#galleryImages {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#galleryImages img {
+  width: 200px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Close Button */
+#closeGallery {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #ee28f5;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.9em;
+  transition: background 0.3s ease;
+}
+
+#closeGallery:hover {
+  background: #d61ad9;
+}
