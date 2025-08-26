@@ -1,119 +1,1070 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tech Gadgets – The Future of Tech is Now</title>
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="21st Century Generation - Premium tech gadgets including smartwatches, earbuds, chargers, and laptops"
+    />
+    <title>21st Century Generation | Premium Tech Gadgets</title>
 
-  <!-- Hero Section -->
-  <header>
-    <h1>Tech That Moves With You</h1>
-    <p>Explore the best in modern tech—from smartwatches and wireless earbuds to powerful laptops and portable chargers. Wherever life takes you, we’ve got the gear to keep you moving..</p>
-    <button class="Button">Explore Products</button>
-  </header>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- AOS CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <!-- Swiper CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Product Categories -->
-  <section>
-    <h2 style="text-align:center;">Shop Our Best-Selling Gadgets</h2>
-    <div class="products">
-      <div class="product">
-        <img src="images/smartwatch.jpg" alt="Smartwatch">
-        <h3>Smartwatches</h3>
-        <p>Stay connected, monitor health, and look sharp with every step.</p>
+    <style>
+      :root {
+        --primary: #6c63ff;
+        --secondary: #ff6584;
+        --accent: #36d1dc;
+        --dark: #1a1a2e;
+        --light: #f8f9fa;
+        --gray: #6c757d;
+        --success: #28a745;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        color: #333;
+        background-color: #f8f9fa;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Poppins", sans-serif;
+        font-weight: 600;
+      }
+
+      /* Header & Navigation */
+      .navbar {
+        background: rgba(26, 26, 46, 0.95) !important;
+        backdrop-filter: blur(10px);
+        padding: 15px 0;
+        transition: all 0.3s ease;
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        color: var(--primary) !important;
+        font-size: 1.5rem;
+      }
+
+      .nav-link {
+        color: var(--light) !important;
+        font-weight: 500;
+        margin: 0 10px;
+        transition: all 0.3s ease;
+        position: relative;
+      }
+
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--primary) !important;
+      }
+
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--primary);
+        transition: width 0.3s ease;
+      }
+
+      .nav-link:hover::after,
+      .nav-link.active::after {
+        width: 100%;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+            rgba(26, 26, 46, 0.8),
+            rgba(26, 26, 46, 0.8)
+          ),
+          url("backg-img.jpg") no-repeat center center;
+        background-size: cover;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, var(--primary) 0%, transparent 70%);
+        opacity: 0.3;
+        z-index: 0;
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-title {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-subtitle {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        max-width: 600px;
+      }
+
+      .btn-primary {
+        background-color: var(--primary);
+        border-color: var(--primary);
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background-color: #554fd8;
+        border-color: #554fd8;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(108, 99, 255, 0.3);
+      }
+
+      /* Section Styling */
+      .section-title {
+        position: relative;
+        margin-bottom: 3rem;
+        text-align: center;
+      }
+
+      .section-title::after {
+        content: "";
+        display: block;
+        width: 80px;
+        height: 4px;
+        background: linear-gradient(to right, var(--primary), var(--secondary));
+        margin: 15px auto;
+        border-radius: 2px;
+      }
+
+      /* Products Section */
+      .products {
+        padding: 100px 0;
+        background-color: white;
+      }
+
+      .swiper {
+        padding: 40px 10px;
+      }
+
+      .category-title {
+        text-align: center;
+        margin-bottom: 2rem;
+        color: var(--dark);
+        font-weight: 600;
+      }
+
+      .card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        height: 100%;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-img-top {
+        height: 220px;
+        object-fit: cover;
+        transition: all 0.5s ease;
+      }
+
+      .card:hover .card-img-top {
+        transform: scale(1.05);
+      }
+
+      .card-body {
+        padding: 1.5rem;
+      }
+
+      .card-title {
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 0.75rem;
+      }
+
+      .card-text {
+        color: var(--gray);
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .price {
+        font-weight: 700;
+        color: var(--primary);
+        font-size: 1.2rem;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: var(--primary);
+        background: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .swiper-button-next::after,
+      .swiper-button-prev::after {
+        font-size: 1.2rem;
+      }
+
+      /* Features Section */
+      .features {
+        padding: 100px 0;
+        background: linear-gradient(to bottom, #f9f9ff, #fff);
+      }
+
+      .feature-box {
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+        background: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+
+      .feature-box:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+        background: linear-gradient(135deg, var(--primary), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .feature-title {
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      .feature-text {
+        color: var(--gray);
+      }
+
+      /* FAQ Section */
+      .faq {
+        padding: 100px 0;
+        background-color: white;
+      }
+
+      .accordion-button {
+        font-weight: 500;
+        padding: 1.25rem;
+        background-color: white;
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        border-radius: 10px !important;
+        margin-bottom: 10px;
+        box-shadow: none;
+      }
+
+      .accordion-button:not(.collapsed) {
+        background-color: var(--primary);
+        color: white;
+        box-shadow: 0 5px 15px rgba(108, 99, 255, 0.2);
+      }
+
+      .accordion-button:focus {
+        box-shadow: none;
+        border-color: var(--primary);
+      }
+
+      .accordion-body {
+        padding: 1.25rem;
+        background-color: #f8f9fa;
+        border-radius: 0 0 10px 10px;
+      }
+
+      /* Newsletter Section */
+      .newsletter {
+        padding: 80px 0;
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--accent) 100%
+        );
+        color: white;
+      }
+
+      .newsletter-form {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .form-control {
+        padding: 15px 20px;
+        border-radius: 30px;
+        border: none;
+      }
+
+      .btn-newsletter {
+        background: var(--dark);
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 30px;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .btn-newsletter:hover {
+        background: #0f0f1f;
+        transform: translateY(-3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Footer */
+      .footer {
+        background-color: var(--dark);
+        color: white;
+        padding: 80px 0 30px;
+      }
+
+      .footer-title {
+        color: white;
+        margin-bottom: 1.5rem;
+        font-weight: 600;
+      }
+
+      .footer-links {
+        list-style: none;
+        padding: 0;
+      }
+
+      .footer-links li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: all 0.3s ease;
+      }
+
+      .footer-links a:hover {
+        color: var(--primary);
+        padding-left: 5px;
+      }
+
+      .social-icons {
+        margin-top: 20px;
+      }
+
+      .social-icons a {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        border-radius: 50%;
+        margin-right: 10px;
+        transition: all 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        background: var(--primary);
+        transform: translateY(-5px);
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 20px;
+        margin-top: 40px;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 992px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.1rem;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2rem;
+        }
+
+        .section-title {
+          font-size: 1.8rem;
+        }
+
+        .card {
+          margin-bottom: 20px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .hero-title {
+          font-size: 1.8rem;
+        }
+
+        .btn-primary {
+          padding: 10px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">21st_Cent_Gen</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#products">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#features">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#footer">Contact</a>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div class="product">
-        <img src="images/laptop.jpg" alt="Laptop">
-        <h3>Laptops</h3>
-        <p>Power through work and play with sleek, fast, and ultra-portable laptops.</p>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container hero-content">
+        <div class="row">
+          <div class="col-lg-7">
+            <h1 class="hero-title" data-aos="fade-right">
+              Next Generation Tech Gadgets
+            </h1>
+            <p class="hero-subtitle" data-aos="fade-right" data-aos-delay="200">
+              Discover the future of technology with our premium collection of
+              smartwatches, earbuds, chargers, and laptops.
+            </p>
+            <div data-aos="fade-right" data-aos-delay="400">
+              <a href="#products" class="btn btn-primary">Shop Now</a>
+              <a href="#features" class="btn btn-outline-light ms-3"
+                >Learn More</a
+              >
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="product">
-        <img src="images/wireless earbuds.jpg" alt="Wireless Earbuds">
-        <h3>Wireless Earbuds</h3>
-        <p>Immersive sound and all-day comfort. Your music, your way.</p>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="products">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Shop By Category</h2>
+
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <!-- Smartwatches Slide -->
+            <div class="swiper-slide">
+              <h3 class="category-title">Smartwatches</h3>
+              <div class="category-cards">
+                <div class="card shadow-sm" data-aos="fade-up">
+                  <img
+                    src="images/smartwatch 1.jpg"
+                    class="card-img-top"
+                    alt="Smartwatch 1"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Smartwatch 1</h5>
+                    <p class="card-text">
+                      Elegant design, fitness tracking, and mobile sync.
+                    </p>
+                    <p class="price">R1,499</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm"
+                      >Add to Cart</a
+                    >
+                  </div>
+                </div>
+                <div
+                  class="card shadow-sm"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <img
+                    src="images/smartwatch 2.jpg"
+                    class="card-img-top"
+                    alt="Smartwatch 2"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Smartwatch 2</h5>
+                    <p class="card-text">
+                      Built-in GPS, waterproof and health tracking.
+                    </p>
+                    <p class="price">R1,899</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm"
+                      >Add to Cart</a
+                    >
+                  </div>
+                </div>
+                <div
+                  class="card shadow-sm"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <img
+                    src="images/smartwatch 3.jpg"
+                    class="card-img-top"
+                    alt="Smartwatch 3"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Smartwatch 3</h5>
+                    <p class="card-text">
+                      Long battery life with AMOLED display.
+                    </p>
+                    <p class="price">R2,299</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm"
+                      >Add to Cart</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Earbuds Slide -->
+            <div class="swiper-slide">
+              <h3 class="category-title">Earbuds</h3>
+              <div class="category-cards">
+                <div class="card shadow-sm" data-aos="fade-up">
+                  <img
+                    src="images/earbuds 1.jpg"
+                    class="card-img-top"
+                    alt="Earbuds 1"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Earbuds 1</h5>
+                    <p class="card-text">
+                      Crystal-clear sound with noise isolation.
+                    </p>
+                    <p class="price">R699</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm"
+                      >Add to Cart</a
+                    >
+                  </div>
+                </div>
+                <div
+                  class="card shadow-sm"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <img
+                    src="images/earbuds 2.jpg"
+                    class="card-img-top"
+                    alt="Earbuds 2"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Earbuds 2</h5>
+                    <p class="card-text">Bluetooth 5.3 with touch controls.</p>
+                    <p class="price">R849</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm"
+                      >Add to Cart</a
+                    >
+                  </div>
+                </div>
+                <div
+                  class="card shadow-sm"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <img
+                    src="images/earbuds 3.jpg"
+                    class="card-img-top"
+                    alt="Earbuds 3"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Earbuds 3</h5>
+                    <p class="card-text">
+                      Comfort fit and all-day battery life.
+                    </p>
+                    <p class="price">R999</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm"
+                      >Add to Cart</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Chargers Slide -->
+            <div class="swiper-slide">
+              <h3 class="category-title">Chargers</h3>
+              <div class="category-cards">
+                <div class="card shadow-sm" data-aos="fade-up">
+                  <img
+                    src="images/charger 1.jpg"
+                    class="card-img-top"
+                    alt="Charger 1"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Charger 1</h5>
+                    <p class="card-text">Ultra-slim 10000mAh power bank.</p>
+                    <p class="price">R499</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm"
+                      >Add to Cart</a
+                    >
+                  </div>
+                </div>
+                <div
+                  class="card shadow-sm"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <img
+                    src="images/charger 2.jpg"
+                    class="card-img-top"
+                    alt="Charger 2"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Charger 2</h5>
+                    <p class="card-text">Fast charging with dual USB ports.</p>
+                    <p class="price">R599</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm"
+                      >Add to Cart</a
+                    >
+                  </div>
+                </div>
+                <div
+                  class="card shadow-sm"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <img
+                    src="images/charger 3.jpg"
+                    class="card-img-top"
+                    alt="Charger 3"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Charger 3</h5>
+                    <p class="card-text">
+                      Wireless charger with LED indicator.
+                    </p>
+                    <p class="price">R749</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm"
+                      >Add to Cart</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Laptops Slide -->
+            <div class="swiper-slide">
+              <h3 class="category-title">Laptops</h3>
+              <div class="category-cards">
+                <div class="card shadow-sm" data-aos="fade-up">
+                  <img
+                    src="images/laptop1.jpg"
+                    class="card-img-top"
+                    alt="Laptop 1"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Laptop 1</h5>
+                    <p class="card-text">13” ultrabook with SSD and 8GB RAM.</p>
+                    <p class="price">R8,499</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm"
+                      >Add to Cart</a
+                    >
+                  </div>
+                </div>
+                <div
+                  class="card shadow-sm"
+                  data-aos="fade-up"
+                  data-aos-delay="100"
+                >
+                  <img
+                    src="images/laptop 2.jpg"
+                    class="card-img-top"
+                    alt="Laptop 2"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Laptop 2</h5>
+                    <p class="card-text">
+                      15” with Ryzen processor and 512GB SSD.
+                    </p>
+                    <p class="price">R10,999</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm"
+                      >Add to Cart</a
+                    >
+                  </div>
+                </div>
+                <div
+                  class="card shadow-sm"
+                  data-aos="fade-up"
+                  data-aos-delay="200"
+                >
+                  <img
+                    src="images/laptop 3.jpg"
+                    class="card-img-top"
+                    alt="Laptop 3"
+                  />
+                  <div class="card-body text-center">
+                    <h5 class="card-title">Laptop 3</h5>
+                    <p class="card-text">Gaming laptop with RTX graphics.</p>
+                    <p class="price">R14,999</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm"
+                      >Add to Cart</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Swiper Navigation Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
+        </div>
       </div>
-      <div class="product">
-        <img src="images/portable charger.jpg" alt="Portable Charger">
-        <h3>Portable Chargers</h3>
-        <p>Power up anywhere with slim, high-capacity backup batteries.</p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Why Choose Us</h2>
+        <div class="row">
+          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-shipping-fast"></i>
+              </div>
+              <h4 class="feature-title">Free Shipping</h4>
+              <p class="feature-text">
+                Free shipping on all orders over R500. Fast delivery to your
+                doorstep.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-undo"></i>
+              </div>
+              <h4 class="feature-title">Easy Returns</h4>
+              <p class="feature-text">
+                30-day money-back guarantee on all products. No questions asked.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-box">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h4 class="feature-title">Secure Payment</h4>
+              <p class="feature-text">
+                Your payment information is protected with industry-standard
+                encryption.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Benefits Section -->
-  <section>
-    <h2 style="text-align:center;">Why Choose 21st_Cent_Gen</h2>
-    <div class="benefits">
-      <div class="benefit">
-        <h3>Cutting-Edge Design</h3>
-        <p>Tech that doesn’t just work well, but looks amazing too.</p>
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <h2 class="section-title" data-aos="fade-up">
+          Frequently Asked Questions
+        </h2>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                What is your return policy?
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingOne"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                We offer a 30-day return policy on all products. Items must be
+                returned in original condition with all accessories and
+                packaging.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                Do you offer international shipping?
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Yes, we ship internationally. Shipping fees and times vary by
+                destination. Please contact us for specific rates to your
+                country.
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+            <h2 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                How can I track my order?
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Once your order ships, we send you a tracking number via email.
+                Use it to track your package on the courier's website. You can
+                also track your order from your account dashboard.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="benefit">
-        <h3>Trusted Quality</h3>
-        <p>Tested and trusted by thousands of happy customers.</p>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+      <div class="container text-center">
+        <h2 class="mb-4" data-aos="fade-up">Stay Updated</h2>
+        <p class="mb-5" data-aos="fade-up" data-aos-delay="100">
+          Subscribe to our newsletter to get updates on new products and special
+          offers.
+        </p>
+        <form class="newsletter-form" data-aos="fade-up" data-aos-delay="200">
+          <div class="input-group mb-3">
+            <input
+              type="email"
+              class="form-control"
+              placeholder="Your email address"
+              aria-label="Your email address"
+            />
+            <button class="btn btn-newsletter" type="submit">Subscribe</button>
+          </div>
+        </form>
       </div>
-      <div class="benefit">
-        <h3>Fast Shipping</h3>
-        <p>Get your gadgets fast with same-day processing.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-5 mb-lg-0">
+            <h3 class="footer-title">21st_Cent_Gen</h3>
+            <p>
+              Bringing you the latest and greatest in technology gadgets.
+              Quality products at affordable prices.
+            </p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-5 mb-md-0">
+            <h5 class="footer-title">Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#products">Products</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#faq">FAQ</a></li>
+              <li><a href="#footer">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4 mb-5 mb-md-0">
+            <h5 class="footer-title">Categories</h5>
+            <ul class="footer-links">
+              <li><a href="#">Smartwatches</a></li>
+              <li><a href="#">Earbuds</a></li>
+              <li><a href="#">Chargers</a></li>
+              <li><a href="#">Laptops</a></li>
+              <li><a href="#">Accessories</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-4">
+            <h5 class="footer-title">Contact Us</h5>
+            <ul class="footer-links">
+              <li>
+                <i class="fas fa-map-marker-alt me-2"></i> 123 Tech Street,
+                Johannesburg
+              </li>
+              <li><i class="fas fa-phone me-2"></i> +27 11 123 4567</li>
+              <li>
+                <i class="fas fa-envelope me-2"></i> support@21stcentgen.com
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 21st_Cent_Gen. All Rights Reserved.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- Reviews -->
-  <section class="reviews">
-  <h2 style="text-align:center;">What Customers Are Saying</h2>
-  <p>⭐️⭐️⭐️⭐️⭐️ “I use the smartwatch daily—it tracks everything and still looks sleek at work!” – voice P.</p>
-  <p>⭐️⭐️⭐️⭐️⭐️ “The wireless earbuds? Game-changer. Great sound, no wires, no drama.” – April D.</p>
-  <p>⭐️⭐️⭐️⭐️⭐️ “My new laptop is a beast—fast, light, and perfect for both work and gaming. Highly recommend!” – Ronald P.</p>
-  <p>⭐️⭐️⭐️⭐️ “Portable charger saved me on a trip—slim and powerful!” – Jerald J</p>
-</section>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+    <script>
+      // Initialize AOS
+      AOS.init({
+        duration: 1000,
+        once: true,
+      });
 
-  <!-- FAQ -->
-  <section class="faq">
-    <h2 style="text-align:center;">FAQs</h2>
-    <p><strong>Q:</strong> Are your products compatible with iOS and Android?<br>
-    <strong>A:</strong> Yes! All products work seamlessly with both platforms.</p>
-    
-    <p><strong>Q:</strong> Is there a warranty?<br>
-    <strong>A:</strong> Absolutely. Every purchase includes a 1-year warranty.</p>
+      // Initialize Swiper
+      const swiper = new Swiper(".mySwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        keyboard: {
+          enabled: true,
+        },
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+      });
 
-    <p><strong>Q:</strong> Do you offer student discounts?<br>
-    <strong>A:</strong> Yes, students save 10% with a valid school email.</p>
-  </section>
-
-  <!-- Call-to-Action Section (CTA Footer) -->
- <footer class="main-footer">
-  <section class="main">
-    <h2>Get Yours Today!</h2>
-    <p>Shop now and get 20% off your first order. Limited time offer!</p>
-    <button class="shopbutton" onclick="location.href='#products'">Shop Now</button>
-  </section>
-
-  <div class="footer-info">
-    <p>Free Shipping on All Orders | Easy Returns | Secure Payments</p>
-    <p>Contact Us: 
-      <a href="mailto:support@techgadgets.com" class="email">support@techgadgets.com</a>
-    </p>
-    <p>&copy; 2025 21st_Cent_Gen. All rights reserved. | Follow us on 
-      <a href="#">Instagram</a> & 
-      <a href="#">TikTok</a>
-    </p>
-  </div>
-</footer>
-  <!-- Hidden Gallery Modal -->
-<div id="galleryModal">
-  <div class="gallery-content">
-    <button id="closeGallery">Close</button>
-    <h2>Product Gallery</h2>
-    <div id="galleryImages">
-      <!-- Images will be inserted here -->
-    </div>
-  </div>
-</div>
-
-<script src ="index.js"></script>
-</body>
+      // Navbar scroll effect
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 50) {
+          document.querySelector(".navbar").style.padding = "10px 0";
+          document.querySelector(".navbar").style.boxShadow =
+            "0 5px 15px rgba(0, 0, 0, 0.1)";
+        } else {
+          document.querySelector(".navbar").style.padding = "15px 0";
+          document.querySelector(".navbar").style.boxShadow = "none";
+        }
+      });
+    </script>
+  </body>
 </html>
